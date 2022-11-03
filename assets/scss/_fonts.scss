@@ -1,0 +1,33 @@
+/* Body */
+@font-face {
+  font-family: "Futura PT";
+  font-weight: 400;
+  src: local("Futura PT"), url(~assets/fonts/futura/futura-book.otf) format("OpenType");
+}
+@font-face {
+  font-family: "Futura PT";
+  font-style: italic;
+  font-weight: 400;
+  src: local("Futura PT"), url(~assets/fonts/futura/futura-book-oblique.otf) format("OpenType");
+}
+@font-face {
+  font-family: "Futura PT";
+  font-weight: 700;
+  src: local("Futura PT"), url(~assets/fonts/futura/futura-demi.otf) format("OpenType");
+}
+@font-face {
+  font-family: "Futura PT";
+  font-weight: 700;
+  font-style: italic;
+  src: local("Futura PT"), url(~assets/fonts/futura/futura-demi-oblique.otf) format("OpenType");
+}
+/* Display */
+@font-face {
+  font-family: "DM Serif Display";
+  src: local("DM Serif Display"), url(~assets/fonts/dm/dm-serif-display.ttf) format("truetype");
+}
+@font-face {
+  font-family: "DM Serif Display";
+  font-style: italic;
+  src: local("DM Serif Display"), url(~assets/fonts/dm/dm-serif-display-italic.ttf) format("truetype");
+}

@@ -1,0 +1,85 @@
+
+.bg-primary {
+  background-color: $color-primary;
+}
+.bg-content {
+  background-color: $color-content;
+}
+.bg-content-clear {
+  background-color: $color-content-clear;
+}
+
+.text-white {
+  color: #fff;
+}
+.text-primary {
+  color: $color-primary;
+}
+.text-content {
+  color: $color-content;
+}
+.text-content-clear {
+  color: $color-content-clear;
+}
+
+.font-body {
+  font-family: $font-body;
+}
+
+.font-display {
+  font-family: $font-display;
+}
+
+@for $i from 0 to 12 {
+  $value: #{$i * 4}px;
+  
+  .gap-#{$i} {
+    gap: $value;
+  }
+
+  .p-#{$i} {
+    padding: $value;
+  }
+  .px-#{$i} {
+    padding-left: $value;
+    padding-right: $value;
+  }
+  .py-#{$i} {
+    padding-top: $value;
+    padding-bottom: $value;
+  }
+
+  .m-#{$i} {
+    margin: $value;
+  }
+  .mx-#{$i} {
+    margin-left: $value;
+    margin-right: $value;
+  }
+  .my-#{$i} {
+    margin-top: $value;
+    margin-bottom: $value;
+  }
+}
+
+.h-100 {
+  height: 100%;
+}
+.w-100 {
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+.justify-end {
+  justify-content: flex-end;
+}
