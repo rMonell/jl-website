@@ -5,12 +5,12 @@
     </div>
     <div>
       <h2 class="app-reassure__title text-primary">
-        <app-append-text-transition>
+        <app-append-text-transition animate-on-scroll>
           {{ title }}
         </app-append-text-transition>
       </h2>
       <p class="app-reassure__text">
-        <app-append-text-transition>
+        <app-append-text-transition animate-on-scroll>
           {{ text }}
         </app-append-text-transition>
       </p>
@@ -38,6 +38,9 @@ export default {
       type: String,
       required: true,
     },
+  },
+  data () {
+    return { shouldTextAppend: false }
   },
 }
 </script>

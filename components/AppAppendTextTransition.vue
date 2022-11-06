@@ -1,5 +1,5 @@
 <template>
-  <div class="app-append-text">
+  <div class="app-append-text" v-bind="appendTextAttrs">
     <div ref="text">
       <slot />
     </div>
@@ -24,16 +24,43 @@ export default {
       type: Number,
       default: 1,
     },
+    animateOnScroll: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  data () {
+    return { animated: false }
+  },
+  computed: {
+    appendTextAttrs () {
+      if (this.animateOnScroll) {
+        return {
+          "data-scroll": true,
+          "data-scroll-call": this._uid,
+        }
+      }
+      return {}
+    },
   },
   mounted () {
-    if (this.timeline) {
-      this.timeline.add(
-        gsap.fromTo(this.$refs.text, { y: "100%" }, { y: 0, ease: this.ease, duration: this.duration }),
-        "<",
-      )
+    const animate = () => {
+      if (this.animated) {
+        return
+      }
+      this.animated = true
+      const playAnimation = () => gsap.fromTo(this.$refs.text, { y: "100%" }, { y: 0, ease: this.ease, duration: this.duration })
+      this.timeline ? this.timeline.add(playAnimation(), "<") : playAnimation()
+    }
+    if (this.animateOnScroll) {
+      this.$locomotive.onInit(scroll => scroll.on("call", (componentUid) => {
+        if (parseInt(componentUid) === this._uid) {
+          animate()
+        }
+      }))
       return
     }
-    gsap.fromTo(this.$refs.text, { y: "100%" }, { y: 0, ease: this.ease, duration: this.duration })
+    animate()
   },
   methods: {},
 }

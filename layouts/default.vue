@@ -1,7 +1,7 @@
 <template>
   <section class="default-layout">
     <the-header ref="header" class="default-layout__header" />
-    <main>
+    <main ref="scroll" class="default-layout__content">
       <nuxt />
     </main>
   </section>
@@ -13,6 +13,7 @@ import { gsap, Expo } from "gsap"
 export default {
   name: "DefaultLayout",
   mounted () {
+    this.$locomotive.init(this.$refs.scroll)
     gsap.fromTo(this.$refs.header.$el, { y: "-100%" }, {
       y: 0,
       ease: Expo.easeInOut,
@@ -24,8 +25,11 @@ export default {
 
 <style lang="scss" scoped>
 .default-layout {
+  display: flex;
+  flex-direction: column;
+
   &__header {
-    position: sticky;
+    position: fixed;
     top: 0;
     width: 100%;
     z-index: 1;

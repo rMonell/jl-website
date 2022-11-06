@@ -1,3 +1,13 @@
 $header-size: 100px;
 $header-size-small: 50px;
 
+
+span.c-scrollbar {
+  height: calc(100% - $header-size);
+  bottom: 0;
+  top: unset;
+  
+  @include screen-sm {
+    height: calc(100% - $header-size-small);
+  }
+}

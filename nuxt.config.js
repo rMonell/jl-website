@@ -26,6 +26,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    "~/plugins/locomotive.js",
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -43,7 +44,7 @@ export default {
     "@nuxtjs/axios",
     "@nuxtjs/style-resources",
   ],
-  styleResources: { scss: ["~/assets/scss/_variables.scss", "~/assets/scss/_mixins.scss", "~/assets/scss/app.scss"] },
+  styleResources: { scss: ["~/assets/scss/_variables.scss", "~/assets/scss/_mixins.scss", "~/assets/scss/app.scss", "~/assets/scss/locomotive.scss"] },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
