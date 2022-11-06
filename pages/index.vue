@@ -1,6 +1,6 @@
 <template>
-  <div>
-    Hello world
+  <div class="home-page">
+    <sections-hero />
   </div>
 </template>
 
