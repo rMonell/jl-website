@@ -1,6 +1,7 @@
 <template>
   <div class="home-page">
-    <sections-hero />
+    <sections-hero data-scroll-section />
+    <sections-reassures data-scroll-section />
   </div>
 </template>
 
