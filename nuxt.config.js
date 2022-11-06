@@ -20,6 +20,8 @@ export default {
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     "~/assets/scss/index.scss",
+    "material-icons/iconfont/material-icons.css",
+    "material-icons/iconfont/outlined.css",
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
